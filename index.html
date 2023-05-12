@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<title>CALCULADORA</title>
+
+</head>
+<body>
+
+	<div id="calculadora">
+		
+
+		<input id="result" type="text" name="result" style="width: 265px; height: 70px;">
+		
+
+		<div class="linha">
+			<button onclick="calcular('acao', 'c')" type="buttom" style="width: 134px; height: 55px;">C</button>
+			<button onclick="calcular('acao', '/')" type="buttom" style="width: 65px; height: 55px;">/</button>
+			<button onclick="calcular('acao', '*')" type="buttom" style="width: 65px; height: 55px;">x</button>
+		</div>
+
+		<div class="linha">
+			<button onclick="calcular('valor', 7)" type="buttom" style="width: 65px; height: 55px;">7</button>
+			<button onclick="calcular('valor', 8)" type="buttom" style="width: 65px; height: 55px;">8</button>
+			<button onclick="calcular('valor', 9)" type="buttom" style="width: 65px; height: 55px;">9</button>
+			<button onclick="calcular('acao', '-')" type="buttom" style="width: 65px; height: 55px;">-</button>
+		</div>
+
+		<div class="linha">
+			<button onclick="calcular('valor', 4)" type="buttom" style="width: 65px; height: 55px;">4</button>
+			<button onclick="calcular('valor', 5)" type="buttom" style="width: 65px; height: 55px;">5</button>
+			<button onclick="calcular('valor', 6)" type="buttom" style="width: 65px; height: 55px;">6</button>
+			<button onclick="calcular('acao', '+')" type="buttom" style="width: 65px; height: 55px;">+</button>
+		</div>
+		
+		<div class="linha1">
+			<button onclick="calcular('valor', 1)" type="buttom" style="width: 65px; height: 55px;">1</button>
+			<button onclick="calcular('valor', 2)" type="buttom" style="width: 65px; height: 55px;">2</button>
+			<button onclick="calcular('valor', 3)" type="buttom" style="width: 65px; height: 55px;">3</button>
+		</div>
+
+		<div class="linha2">
+			<button onclick="calcular('acao', '=')" type="buttom" style="width: 65px; height: 115px;">=</button>
+		</div>
+
+		<div class="linha1">
+			<button onclick="calcular('valor', 0)" type="buttom" style="width: 134px; height: 55px;">0</button>
+			<button onclick="calcular('acao', '.')" type="buttom" style="width: 65px; height: 55px;">.</button>
+		</div>
+
+		<script>
+
+			function calcular(tipo, valor){
+
+				if (tipo === 'acao') {
+
+					if (valor === 'c') {
+
+						document.getElementById('result').value = '';
+					}
+
+					if (valor === '+' || valor === '-' || valor === '*' || valor === '/' || valor === '.') {
+
+						document.getElementById('result').value += valor;
+
+					}
+
+					if (valor === '=') {
+
+						var valor_campo = eval(document.getElementById('result').value);
+						document.getElementById('result').value = valor_campo
+					}
+
+				}else if (tipo === 'valor') {
+
+					document.getElementById('result').value += valor;
+				}
+			}
+
+		</script>
+		
+		
+
+	</div>
+
+</body>
+</html>
